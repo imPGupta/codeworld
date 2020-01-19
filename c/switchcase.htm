@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CodeWorld</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0, shrink-to-fit=no">
+        <meta name="keywords" content="codeworld,code, mmmut codes, html, css, c, data structure, java, c++, learning, programming, development,tutorials,practicals,examples">
+        <meta name="description" content="It is an educational website for learning coding online. It includes tutorials, references, practicals related to C, C++, Java, Data Structure etc.">
+        <meta name="author" content="Prashant Kumar Gupta">
+        <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="stylesheet" href="../css/font-awesome.css" type="text/css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="shortcut icon" href="../img/logo.jpg">
+    </head>
+    <body>
+        
+        <!-- Header Section -->
+        <nav id="myNavbar" class="navbar fixed-top navbar-expand-lg navbar-dark rounded">
+            <div id="content">
+                        <button type="button" class="navbar-toggler" id="sidebarCollapse" data-toggle="collapse"
+                         aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="fa fa-arrow-circle-left"></span>
+                        </button>
+            </div>
+            <a class="navbar-brand" href="../index.html">
+                <img src="../img/logo.jpg" alt="" class="rounded" width="30" height="30"> CodeWorld</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#mymenu"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mymenu">
+                <ul class="navbar-nav colors mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home<span class="sr-only"></span></a> </li>
+                    <li class="nav-item active"><a class="nav-link" href="../c.html">C Programming</a> </li>
+                    <li class="nav-item"><a class="nav-link" href="../cpp.html">C++ Programming</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../ds.html">Data Structure</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../java.html">Java</a></li>
+                    <li class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle" href="#" id="practical" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Practical
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="practical">
+                            <a class="dropdown-item" href="../acm.html">ACM</a>
+                            <a class="dropdown-item" href="../swl-4.html">SWL-4</a>
+                            <a class="dropdown-item" href="../cod.html">COD</a>
+                            <a class="dropdown-item" href="../dbms.html">DBMS</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#contus">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>  
+ 
+        <!-- left Sidebar -->
+        <div class="wrapper">
+            <nav id="sidebar" class="shadow-sm">
+                <div class="sidebar-header mt-5">
+                    <h3>C Programming</h3>
+                </div>      
+                <ul class="list-unstyled components">
+                    <li><a href="../c.html">Introduction</a></li>
+                    <li><a href="hellocodeworld.htm">Hello CodeWorld</a></li>
+                    <li><a href="maxoffour.htm">Maximum of Four Numbers</a></li>
+                    <li><a href="forloop.htm">Using for Loop</a></li>
+                    <li><a href="printingpatterns.htm">Pattern Printing</a></li>
+                    <li><a href="sumofarray.htm">Sum of Array Elements</a></li>
+                    <li><a href="sumofdigits.htm">Sum of Digits</a></li>
+                    <li class="active"><a href="switchcase.htm">Switch-Case</a></li>
+                </ul>
+            </nav>
+            <div class="container-sm mt-5 pt-4">
+                <h2 class="text-dark mb-4 pl-2">Switch Case</h2>
+                <h4 class="text-info p-2">Recommended: Please solve it by yourself, before moving on to the solution.</h4>
+                <div class="card shadow-sm mb-5">
+                  <div class="card-body">
+<pre id="content">
+        #include&lt;stdio.h&gt;
+        int main()
+        {
+            long a;
+            printf("Enter a number: ");
+            scanf("%ld",&a);
+            switch(a)
+            {
+                case 1:printf("one");break;
+                case 2:printf("two");break;
+                case 3:printf("three");break;
+                case 4:printf("four");break;
+                case 5:printf("fife");break;
+                case 6:printf("six");break;
+                case 7:printf("seven");break;
+                case 8:printf("eight");break;
+                case 9:printf("nine");break;
+                default:printf("Greater than 9");
+            }
+            return 0;
+        }
+</pre>
+<!-- <button class="btn btn-outline-info btn-sm float-right" onclick="copyToClipboard('#ct')">Copy</button> -->
+                  </div>
+            </div>
+            <h5 class="text-success mt-5 mb-5">Don't hesitate to message me if you find anything incorrect, or you want to share more information about the topic discussed above.
+                <span class="fa fa-hand-o-down"></span>
+            </h5>
+            
+            </div>
+        </div>
+
+
+       <!-- Footer -->
+       <footer id="contus">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="social" data-aos="flip-up">
+                        <li><a href="https://www.facebook.com/imPGupta" target="_blank"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="https://twitter.com/imPGupta_" target="_blank"><span class="fa fa-twitter"></span></a></li>
+                        <li><a href="mailto:prashantkgupta17@gmail.com" target="_blank"><span class="fa fa-envelope"></span></a></li>
+                        <li><a href="https://wa.me/918917793044" target="_blank"><span class="fa fa-whatsapp"></span></a></li>
+                        <li><a href="tel:+918917793044" target="_blank"><span class="fa fa-phone"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright">Copyright &copy; Prashant Kr. Gupta</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>  
+<script src="../js/jquery-3.4.1.js"></script>
+<script src="../js/popper.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/script.js"></script>
+</body>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CodeWorld</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0, shrink-to-fit=no">
+        <meta name="keywords" content="codeworld,code, mmmut codes, html, css, c, data structure, java, c++, learning, programming, development,tutorials,practicals,examples">
+        <meta name="description" content="It is an educational website for learning coding online. It includes tutorials, references, practicals related to C, C++, Java, Data Structure etc.">
+        <meta name="author" content="Prashant Kumar Gupta">
+        <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="stylesheet" href="../css/font-awesome.css" type="text/css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="shortcut icon" href="../img/logo.jpg">
+    </head>
+    <body>
+        
+        <!-- Header Section -->
+        <nav id="myNavbar" class="navbar fixed-top navbar-expand-lg navbar-dark rounded">
+            <div id="content">
+                        <button type="button" class="navbar-toggler" id="sidebarCollapse" data-toggle="collapse"
+                         aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="fa fa-arrow-circle-left"></span>
+                        </button>
+            </div>
+            <a class="navbar-brand" href="../index.html">
+                <img src="../img/logo.jpg" alt="" class="rounded" width="30" height="30"> CodeWorld</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#mymenu"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mymenu">
+                <ul class="navbar-nav colors mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home<span class="sr-only"></span></a> </li>
+                    <li class="nav-item"><a class="nav-link" href="../c.html">C Programming</a> </li>
+                    <li class="nav-item"><a class="nav-link" href="../cpp.html">C++ Programming</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="../ds.html">Data Structure</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../java.html">Java</a></li>
+                    <li class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle" href="#" id="practical" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Practical
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="practical">
+                            <a class="dropdown-item" href="../acm.html">ACM</a>
+                            <a class="dropdown-item" href="../swl-4.html">SWL-4</a>
+                            <a class="dropdown-item" href="../cod.html">COD</a>
+                            <a class="dropdown-item" href="../dbms.html">DBMS</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#contus">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>  
+ 
+        <!-- left Sidebar -->
+        <div class="wrapper">
+            <nav id="sidebar" class="shadow-sm">
+                <div class="sidebar-header mt-5">
+                    <h3>Data Structure</h3>
+                </div>
+        
+                <ul class="list-unstyled components">
+                    <li><a href="../ds.html">Introduction</a></li>
+                    <li><a href="bubblesort.html">Bubble Sort</a></li>
+                    <li><a href="insertionsort.html">Insertion Sort</a></li>
+                    <li><a href="selectionsort.html">Selection Sort</a></li>
+                    <li><a href="heapsort.html">Heap Sort</a></li>
+                    <li><a href="quicksort.html">Quick Sort</a></li>
+                    <li><a href="stackarray.html">Stack Using Array</a></li>
+                    <li><a href="stackdynamicarray.html">Stack Using Dynamic Array</a></li>
+                    <li><a href="stacklinkedlist.html">Stack Using Linked List</a></li>
+                    <li class="active"><a href="queuearray.html">Queue Using Array</a></li>
+                    <li><a href="queuedynamicarray.html">Queue Using Dynamic Array</a></li>   
+                    <li><a href="circularqueuelinkedlist.html">Circular Queue Using Linked List</a></li>
+                    <li><a href="dequeuearray.html">Double Ended Queue</a></li>
+                    <li><a href="linkedlist.html">Linked List</a></li>
+                    <li><a href="doublylinkedlist.html">Doubly Linked List</a></li>
+                </ul>
+            </nav>
+            <div class="container-sm mt-5 pt-4">
+                <h2 class="text-dark mb-4 pl-2">Queue Using Array</h2>
+                <h4 class="text-info p-2">Recommended: Please solve it by yourself, before moving on to the solution.</h4>
+                <div class="card shadow-sm mb-5">
+                  <div class="card-body">
+<pre id="content">
+            #include&lt;stdio.h&gt;
+            #include&lt;conio.h&gt;
+            #include&lt;stdlib.h&gt;
+            #define max 5
+            int queue[max];
+            int front=-1,rear=-1;
+            int isEmpty()
+            {
+                if(front==-1)
+                return 1;
+                else return 0;
+            }
+            int isFull()
+            {
+                if(front==0&&rear==max-1||front==rear+1)
+                return 1;
+                else
+                return 0;
+            }
+            void Insert(int item)
+            {
+                if(isFull())
+                {
+                    printf("Queue Overflow!");return;
+                }	
+                    if(front==-1)
+                    front=0;
+                    if(rear==max-1)
+                    rear=0;
+                    else
+                    rear+=1;
+                    queue[rear]=item;
+            }
+            int del()
+            {
+                if(isEmpty())
+                {
+                        printf("Queue underflow!");
+                        exit(0);
+                }
+                else
+                {
+                int item=queue[front];
+                    if(front==rear)
+                    front=rear=-1;
+                    else if(front==max-1)
+                    front=0;
+                    else
+                    front+=1;
+                return item;
+            }
+            }
+            void display()
+            {
+                int i;
+                if(isEmpty())
+                {
+                printf("Queue is Empty.");
+                return;
+                }
+                i=front;		
+                    if(front&lt;=rear)
+                    while(i&lt;=rear)
+                    printf("%d ",queue[i++]);
+                    else
+                    {
+                        while(i&lt;=max-1)
+                        printf("%d ",queue[i++]);
+                        i=0;
+                        while(i&lt;=rear)
+                        printf("%d ",queue[i++]);
+                    }
+            }
+            int main()
+            {
+                int n,c;
+                while(1)
+                {
+                    system("cls");
+                    printf("1.Insert\n2.Delete\n3.Display\n4.Exit\nEnter your choice: ");
+                    scanf("%d",&c);
+                    int s;
+                    switch(c)
+                    {
+                        case 1:printf("Enter a number: ");
+                            scanf("%d",&n);
+                            Insert(n);break;
+                        case 2: 
+                                s=del();
+                            printf("%d",s);break;
+                        case 3:display();break;
+                        case 4:exit(0);
+                        default:printf("wrong choice!");
+                    }
+                    getch();
+                }
+                return 0;
+            }
+</pre>
+                  </div>
+                  <!-- <div class="card-action">
+                  <button class="btn btn-info" id="btn" onclick="copy()">Copy</button>
+                </div> -->
+            </div>
+            <h5 class="text-success mt-5 mb-5">Don't hesitate to message me if you find anything incorrect, or you want to share more information about the topic discussed above.
+                <span class="fa fa-hand-o-down"></span>
+            </h5>
+            </div>
+        </div>
+
+
+       <!-- Footer -->
+       <footer id="contus">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="social" data-aos="flip-up">
+                        <li><a href="https://www.facebook.com/imPGupta" target="_blank"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="https://twitter.com/imPGupta_" target="_blank"><span class="fa fa-twitter"></span></a></li>
+                        <li><a href="mailto:prashantkgupta17@gmail.com" target="_blank"><span class="fa fa-envelope"></span></a></li>
+                        <li><a href="https://wa.me/918917793044" target="_blank"><span class="fa fa-whatsapp"></span></a></li>
+                        <li><a href="tel:+918917793044" target="_blank"><span class="fa fa-phone"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright">Copyright &copy; Prashant Kr. Gupta</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </body>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="../js/jquery-3.4.1.js"></script>
+<script src="../js/popper.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/script.js"></script>
+
+</body>
+</body>
+</html>
