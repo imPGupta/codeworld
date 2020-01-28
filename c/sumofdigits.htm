@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>CodeWorld</title>
+        <title>Sum Of Digits Of A Number</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, intial-scale=1.0, shrink-to-fit=no">
         <meta name="keywords" content="codeworld,code, mmmut codes, html, css, c, data structure, java, c++, learning, programming, development,tutorials,practicals,examples">
@@ -13,31 +13,41 @@
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link rel="shortcut icon" href="../img/logo.jpg">
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156947534-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-156947534-1');
+        </script>
     </head>
     <body>
         
         <!-- Header Section -->
-        <nav id="myNavbar" class="navbar fixed-top navbar-expand-lg navbar-dark rounded">
-            <div id="content">
+        <nav id="myNavbar" class="navbar fixed-top navbar-expand-md navbar-dark rounded">
+            <div>
                         <button type="button" class="navbar-toggler" id="sidebarCollapse" data-toggle="collapse"
                          aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="fa fa-arrow-circle-left"></span>
+                        <span class="fa fa-align-left"></span>
                         </button>
             </div>
             <a class="navbar-brand" href="../index.html">
                 <img src="../img/logo.jpg" alt="" class="rounded" width="30" height="30"> CodeWorld</a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#mymenu"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="fa fa-th"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="mymenu">
-                <ul class="navbar-nav colors mr-auto">
+                <ul class="navbar-nav nav-fill colors mr-auto">
                     <li class="nav-item"><a class="nav-link" href="../index.html">Home<span class="sr-only"></span></a> </li>
-                    <li class="nav-item active"><a class="nav-link" href="../c.html">C Programming</a> </li>
-                    <li class="nav-item"><a class="nav-link" href="../cpp.html">C++ Programming</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="../c.html">C </a> </li>
+                    <li class="nav-item"><a class="nav-link" href="../cpp.html">C++</a></li>
                     <li class="nav-item"><a class="nav-link" href="../ds.html">Data Structure</a></li>
                     <li class="nav-item"><a class="nav-link" href="../java.html">Java</a></li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown align-self-center">
                         <button class="nav-link dropdown-toggle" href="#" id="practical" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Practical
                         </button>
@@ -75,23 +85,25 @@
                 <h4 class="text-info p-2">Recommended: Please solve it by yourself, before moving on to the solution.</h4>
                 <div class="card shadow-sm mb-5">
                   <div class="card-body">
+                    <div class="card-action float-right">
+                        <button class="btn btn-info" id="btn" data-clipboard-target="#content"><span class="fa fa-copy"></span></button>
+                      </div>
 <pre id="content">
-        #include&lt;stdio.h&gt;
-        int main()
-         {	
-            int n,s=0;
-            printf("Enter a number: ");
-            scanf("%d", &n);
-            while(n&gt;0)
-            {
-                s+=n%10;
-                n=n/10;
-            }
-            printf("Sum of digits= %d",s);
-            return 0;
+    #include&lt;stdio.h&gt;
+    int main()
+        {	
+        int n,s=0;
+        printf("Enter a number: ");
+        scanf("%d", &n);
+        while(n&gt;0)
+        {
+            s+=n%10;
+            n=n/10;
         }
+        printf("Sum of digits= %d",s);
+        return 0;
+    }
 </pre>
-<!-- <button class="btn btn-outline-info btn-sm float-right" onclick="copyToClipboard('#ct')">Copy</button> -->
                   </div>
             </div>
             <h5 class="text-success mt-5 mb-5">Don't hesitate to message me if you find anything incorrect, or you want to share more information about the topic discussed above.
@@ -130,6 +142,25 @@
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/bootstrap.bundle.min.js"></script>
 <script src="../js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.card-action #btn');
+    clipboard.on('success', function(e) {
+    console.info('Action:', e.action);
+    console.info('Text:', e.text);
+    console.info('Trigger:', e.trigger);
+    setTooltip('Copied!');
+    hideTooltip();
+    e.clearSelection();
+    });
+
+    clipboard.on('error', function(e) {
+    console.error('Action:', e.action);
+    console.error('Trigger:', e.trigger);
+    setTooltip('Failed!');
+  hideTooltip();
+    });       
+</script>
 </body>
 </body>
 </html>

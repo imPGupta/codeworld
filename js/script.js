@@ -25,3 +25,22 @@ $('body').scrollspy({
     target: '#myNavbar',
     offset: 250,
   });
+
+
+// copy to clipboard
+$('.card-action #btn').tooltip({
+    trigger: 'click',
+    placement: 'bottom'
+  });
+  
+  function setTooltip(message) {
+    $('.card-action #btn').tooltip('hide')
+      .attr('data-original-title', message)
+      .tooltip('show');
+  }
+  
+  function hideTooltip() {
+    setTimeout(function() {
+      $('.card-action #btn').tooltip('hide');
+    }, 1000);
+  }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>CodeWorld</title>
+        <title>Queue Using Dynamic Array</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, intial-scale=1.0, shrink-to-fit=no">
         <meta name="keywords" content="codeworld,code, mmmut codes, html, css, c, data structure, java, c++, learning, programming, development,tutorials,practicals,examples">
@@ -13,31 +13,41 @@
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link rel="shortcut icon" href="../img/logo.jpg">
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156947534-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-156947534-1');
+        </script>
     </head>
     <body>
         
         <!-- Header Section -->
-        <nav id="myNavbar" class="navbar fixed-top navbar-expand-lg navbar-dark rounded">
-            <div id="content">
+        <nav id="myNavbar" class="navbar fixed-top navbar-expand-md navbar-dark rounded">
+            <div>
                         <button type="button" class="navbar-toggler" id="sidebarCollapse" data-toggle="collapse"
                          aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="fa fa-arrow-circle-left"></span>
+                        <span class="fa fa-align-left"></span>
                         </button>
             </div>
             <a class="navbar-brand" href="../index.html">
                 <img src="../img/logo.jpg" alt="" class="rounded" width="30" height="30"> CodeWorld</a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#mymenu"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="fa fa-th"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="mymenu">
-                <ul class="navbar-nav colors mr-auto">
+                <ul class="navbar-nav nav-fill colors mr-auto">
                     <li class="nav-item"><a class="nav-link" href="../index.html">Home<span class="sr-only"></span></a> </li>
-                    <li class="nav-item"><a class="nav-link" href="../c.html">C Programming</a> </li>
-                    <li class="nav-item"><a class="nav-link" href="../cpp.html">C++ Programming</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../c.html">C </a> </li>
+                    <li class="nav-item"><a class="nav-link" href="../cpp.html">C++ </a></li>
                     <li class="nav-item active"><a class="nav-link" href="../ds.html">Data Structure</a></li>
                     <li class="nav-item"><a class="nav-link" href="../java.html">Java</a></li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown align-self-center">
                         <button class="nav-link dropdown-toggle" href="#" id="practical" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Practical
                         </button>
@@ -83,131 +93,126 @@
                 <h4 class="text-info p-2">Recommended: Please solve it by yourself, before moving on to the solution.</h4>
                 <div class="card shadow-sm mb-5">
                   <div class="card-body">
+                    <div class="card-action float-right">
+                        <button class="btn btn-info" id="btn" data-clipboard-target="#content"><span class="fa fa-copy"></span></button>
+                      </div>
 <pre id="content">
-            #include&lt;stdio.h&gt;
-            #include&lt;conio.h&gt;
-            #include&lt;stdlib.h&gt;
-            #include&lt;malloc.h&gt;
-            struct queue
+    #include&lt;stdio.h&gt;
+    #include&lt;conio.h&gt;
+    #include&lt;stdlib.h&gt;
+    #include&lt;malloc.h&gt;
+    struct queue
+    {
+        int front,rear,capacity;
+        int *array;
+    };
+    struct queue* createQueue(int cap)
+    {
+        struct queue *q;
+        q=(struct queue*)malloc(sizeof(struct queue));
+        q-&gt;front=-1;
+        q-&gt;rear=-1;
+        q-&gt;capacity=cap;
+        q-&gt;array=(int*)malloc(sizeof(int)*q-&gt;capacity);
+        if(!q-&gt;array) return NULL;
+        return q;	
+    }
+    int isFullQueue(struct queue *q)
+    {
+        if((q-&gt;front==0&&q-&gt;rear==q-&gt;capacity-1)||q-&gt;front==q-&gt;rear+1)
+        return 1;
+        else return 0;
+    }
+    void Insert(struct queue *q,int data)
+    {
+        if(q-&gt;front==-1)
+        {
+                q-&gt;front=q-&gt;rear=0;
+                q-&gt;array[q-&gt;rear]=data;	
+        }
+        else
+        {
+            if(!isFullQueue(q))
             {
-                int front,rear,capacity;
-                int *array;
-            };
-            struct queue* createQueue(int cap)
-            {
-                struct queue *q;
-                q=(struct queue*)malloc(sizeof(struct queue));
-                q-&gt;front=-1;
-                q-&gt;rear=-1;
-                q-&gt;capacity=cap;
-                q-&gt;array=(int*)malloc(sizeof(int)*q-&gt;capacity);
-                if(!q-&gt;array) return NULL;
-                return q;	
-            }
-            int isFullQueue(struct queue *q)
-            {
-                if((q-&gt;front==0&&q-&gt;rear==q-&gt;capacity-1)||q-&gt;front==q-&gt;rear+1)
-                return 1;
-                else return 0;
-            }
-            void Insert(struct queue *q,int data)
-            {
-                if(q-&gt;front==-1)
+                if(q-&gt;rear==q-&gt;capacity-1)
                 {
-                        q-&gt;front=q-&gt;rear=0;
-                        q-&gt;array[q-&gt;rear]=data;	
-                }
-                else
-                {
-                    if(!isFullQueue(q))
-                    {
-                        if(q-&gt;rear==q-&gt;capacity-1)
-                        {
-                            q-&gt;rear=0;
-                            q-&gt;array[q-&gt;rear]=data;
-                        }
-                    
-                        else
-                        {
-                        q-&gt;rear+=1;
-                        q-&gt;array[q-&gt;rear]=data;
-                        }
-                }
-                else
-                printf("Queue is Full, element not inserted.");
-            }
-            
-            }
-            void Delete(struct queue *q)
-            {
-                if(q-&gt;front==-1)
-                printf("Queue is empty.");
-                else if(q-&gt;front==q-&gt;rear)
-                {
-                    printf("Deleted item= %d",q-&gt;array[q-&gt;front]);
-                    q-&gt;front=q-&gt;rear=-1;
-                    
-                }
-                else if(q-&gt;front==q-&gt;capacity-1)
-                {
-                    printf("Deleted item= %d",q-&gt;array[q-&gt;front]);
-                    q-&gt;front=0;
-                }
-                else
-                {
-                    printf("Deleted item= %d",q-&gt;array[q-&gt;front]);
-                    q-&gt;front+=1;
-                }
-            }
-            void View(struct queue *q)
-            {
-                int t;
-                t=q-&gt;front;
-                if(t==-1)
-                printf("Queue is Empty.");
-                else
-                {
-                    while(t!=q-&gt;rear)
-                    {
-                        printf("%d ",q-&gt;array[t]);
-                        if(t==q-&gt;capacity-1)
-                        t=0;
-                        else
-                        t++;
-                    }
-                    printf("%d ",q-&gt;array[t]);
+                    q-&gt;rear=0;
+                    q-&gt;array[q-&gt;rear]=data;
                 }
             
-            }
-            
-            int main()
-            {
-            int n,c;
-            struct queue *q=createQueue(5);
-            while(1)
-            {
-                system("cls");
-                printf("1.Insert\n2.Delete\n3.View\n4.Exit\nEnter your choice: ");
-                scanf("%d",&c);
-                switch(c)
+                else
                 {
-                    case 1:printf("Enter a number: ");
-                            scanf("%d",&n);
-                            Insert(q,n);break;
-                    case 2:Delete(q);break;
-                    case 3:View(q);break;
-                    case 4:exit(0);
-                    
+                q-&gt;rear+=1;
+                q-&gt;array[q-&gt;rear]=data;
                 }
-                getch();
             }
-            return 0;
+            else
+            printf("Queue is Full, element not inserted.");
+        }
+    }
+    void Delete(struct queue *q)
+    {
+        if(q-&gt;front==-1)
+        printf("Queue is empty.");
+        else if(q-&gt;front==q-&gt;rear)
+        {
+            printf("Deleted item= %d",q-&gt;array[q-&gt;front]);
+            q-&gt;front=q-&gt;rear=-1;
+        }
+        else if(q-&gt;front==q-&gt;capacity-1)
+        {
+            printf("Deleted item= %d",q-&gt;array[q-&gt;front]);
+            q-&gt;front=0;
+        }
+        else
+        {
+            printf("Deleted item= %d",q-&gt;array[q-&gt;front]);
+            q-&gt;front+=1;
+        }
+    }
+    void View(struct queue *q)
+    {
+        int t;
+        t=q-&gt;front;
+        if(t==-1)
+        printf("Queue is Empty.");
+        else
+        {
+            while(t!=q-&gt;rear)
+            {
+                printf("%d ",q-&gt;array[t]);
+                if(t==q-&gt;capacity-1)
+                t=0;
+                else
+                t++;
             }
+            printf("%d ",q-&gt;array[t]);
+        }
+    }    
+    int main()
+    {
+    int n,c;
+    struct queue *q=createQueue(5);
+    while(1)
+    {
+        system("cls");
+        printf("1.Insert\n2.Delete\n3.View\n4.Exit\nEnter your choice: ");
+        scanf("%d",&c);
+        switch(c)
+        {
+            case 1:printf("Enter a number: ");
+                    scanf("%d",&n);
+                    Insert(q,n);break;
+            case 2:Delete(q);break;
+            case 3:View(q);break;
+            case 4:exit(0);
+        }
+        getch();
+    }
+    return 0;
+    }
 </pre>
                   </div>
-                  <!-- <div class="card-action">
-                  <button class="btn btn-info" id="btn" onclick="copy()">Copy</button>
-                </div> -->
             </div>
             <h5 class="text-success mt-5 mb-5">Don't hesitate to message me if you find anything incorrect, or you want to share more information about the topic discussed above.
                 <span class="fa fa-hand-o-down"></span>
@@ -244,7 +249,25 @@
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/bootstrap.bundle.min.js"></script>
 <script src="../js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.card-action #btn');
+    clipboard.on('success', function(e) {
+    console.info('Action:', e.action);
+    console.info('Text:', e.text);
+    console.info('Trigger:', e.trigger);
+    setTooltip('Copied!');
+    hideTooltip();
+    e.clearSelection();
+    });
 
+    clipboard.on('error', function(e) {
+    console.error('Action:', e.action);
+    console.error('Trigger:', e.trigger);
+    setTooltip('Failed!');
+  hideTooltip();
+    });       
+</script>
 </body>
 </body>
 </html>

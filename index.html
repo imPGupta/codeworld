@@ -13,25 +13,36 @@
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link rel="shortcut icon" href="img/logo.jpg">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156947534-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-156947534-1');
+        </script>
+
     </head>
     <body>
        
         <!-- Header Section -->
-        <nav id="myNavbar" class="navbar fixed-top navbar-expand-lg navbar-dark rounded">
+        <nav id="myNavbar" class="navbar fixed-top navbar-expand-md navbar-dark rounded">
             <a class="navbar-brand" href="#">
                 <img src="img/logo.jpg" alt="" class="rounded" width="30" height="30"> CodeWorld</a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#mymenu"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="fa fa-th"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="mymenu">
-                <ul class="navbar-nav colors mr-auto">
+                <ul class="navbar-nav nav-fill colors mr-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home<span class="sr-only"></span></a> </li>
-                    <li class="nav-item"><a class="nav-link" href="#c">C Programming</a> </li>
-                    <li class="nav-item"><a class="nav-link" href="#cpp">C++ Programming</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#c">C </a> </li>
+                    <li class="nav-item"><a class="nav-link" href="#cpp">C++ </a></li>
                     <li class="nav-item"><a class="nav-link" href="#ds">Data Structure</a></li>
                     <li class="nav-item"><a class="nav-link" href="#java">Java</a></li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown align-self-center">
                         <button class="nav-link dropdown-toggle" id="practical" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Practical
                         </button>
@@ -42,6 +53,7 @@
                             <a class="dropdown-item" href="#dbms">DBMS</a>
                         </div>
                     </li>
+                    <li class="nav-item"><a class="nav-link" href="notes.html">Notes</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contus">Contact Us</a></li>
                 </ul>
                 <!-- <form class="form-inline my-2 my-lg-0 ml-auto" id="cse">
@@ -54,8 +66,9 @@
        
         <!-- Home -->
         <div id="home" class="welcome-area active">
-           <div class="container active">
-            <div class="col-lg-6 col-md-8 col-sm-12 centered">
+           <div class="container active" data-aos="zoom-out">
+            <!-- <div class="col-lg-6 col-md-8 col-sm-12 centered"> -->
+                <div class="centered mt-5">
                 <h1>Hello Programmer! Welcome to my website</h1>
                 <p>The motive of this website is to learn programming in an interactive way</p>
                </div>
@@ -75,7 +88,7 @@
                             <p class="mt-3">C is a popular general-purpose computer programming language. If you are new to programming, C is a good choice to start your programming journey.
                                 <p>C is a procedural computer programming language supporting structured programming, lexical variable scope, and recursion, while a static type system prevents unintended operations.</p>
                                 <div class="col text-center">
-                                    <a href="c.html"><button class="btn btn-outline-primary btn-lg">C PROGRAMS</button></a>
+                                    <a href="c.html"><button class="btn btn-primary pulse btn-lg">C PROGRAMS</button></a>
                                  </div>
                                 </div>
                     <!-- </div> -->
@@ -93,7 +106,7 @@
                             <p class="mt-3">C++ is an object-oriented programming language developed by Bjarne Stroustrup. C++ is a powerful language with imperative and generic programming features.
                                 <p>C++ gives programmers a high level of control over system resources and memory.C++ is a cross-platformed language that can be used to create sophisticated high-performance applications.</p>
                                 <div class="col text-center">
-                                    <a href="cpp.html"><button class="btn btn-outline-primary btn-lg mb-1">C++ PROGRAMS</button></a>
+                                    <a href="cpp.html"><button class="btn btn-primary pulse btn-lg mb-1">C++ PROGRAMS</button></a>
                                  </div>        
                                 </div>
                         <div class="col-lg-5 col-md-12 col-sm-12 align-self-center">
@@ -117,7 +130,7 @@
                             <p class="mt-3">In computer science, a data structure is a data organization, management, and storage format that enables efficient access and modification.</p>
                             <p>More precisely, a data structure is a collection of data values, the relationships among them, and the functions or operations that can be applied to the data.</p>
                             <div class="col text-center">
-                                <a href="ds.html"><button class="btn btn-outline-primary btn-lg">DS PROGRAMS</button></a>
+                                <a href="ds.html"><button class="btn btn-primary pulse btn-lg">DS PROGRAMS</button></a>
                             </div>
                         </div>
                         <!-- </div> -->
@@ -135,7 +148,7 @@
                             <p class="mt-3">Java is a general-purpose programming language that is class-based, object-oriented, and designed to have as few implementation dependencies as possible.</p>
                             <p>Java was originally developed by James Gosling at Sun Microsystems and released in 1995 as a core component of Sun Microsystems' Java platform. </p>
                             <div class="col text-center">
-                                <a href="java.html"><button class="btn btn-outline-primary btn-lg mb-1">JAVA PROGRAMS</button></a>
+                                <a href="java.html"><button class="btn btn-primary pulse btn-lg mb-1">JAVA PROGRAMS</button></a>
                                 </div>
                             </div>
                         <div class="col-lg-5 col-md-12 col-sm-12 align-self-center">

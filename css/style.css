@@ -2,6 +2,16 @@
 #myNavbar{
   background-color: rgb(27, 163, 216);
 }
+.navbar-nav > li > .dropdown-menu 
+{ 
+  background-color: rgb(0, 146, 204);
+}
+.navbar-nav > li > .dropdown-menu a {
+color: rgb(255, 255, 255);
+}
+.navbar-nav > li > .dropdown-menu a:hover{
+  color: rgb(27, 163, 216);
+}
 
 
 /* link color */
@@ -16,6 +26,8 @@
   outline: none;
   background: none;
 }
+/* Home Page Area */
+
 
 .welcome-area
 {
@@ -76,14 +88,14 @@
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     .welcome-area h1 {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
     }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .welcome-area h1  {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 }
 
@@ -96,14 +108,14 @@
 
 @media (min-width: 576px) {
   .welcome-area p {
-      font-size: 1rem;
+      font-size: 1.2rem;
   }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 .welcome-area p  {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
   }
 }
 
@@ -141,7 +153,9 @@ footer
 footer {
   background-image: linear-gradient(127deg, #535252 0%, #000000 91%);
   padding-top: 90px;
+  bottom: 0;
 }
+
 
 footer .social {
   overflow: hidden;
@@ -190,6 +204,7 @@ footer .copyright {
 }
 
 @media (max-width: 992px) {
+
   footer .text {
     margin-bottom: 30px;
   }
@@ -200,7 +215,11 @@ footer .copyright {
     margin-bottom: 30px;
   }
 }
-
+@media (max-width: 786px) {
+  footer {
+    margin-bottom: 0px;
+}
+}
 
 
 /* Sidebar */
@@ -334,4 +353,61 @@ ul ul a {
   .container-sm .text-success{
     font-size: medium;
   }
+}
+
+/* Notes Buttons */
+/* body .container #notes{
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+} */
+.pulse:hover, .pulse:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+ }
+}
+.pulse {
+  --color: #07a3fd;
+  --hover: #0275d8;
+}
+.offset {
+  box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+}
+.offset:hover, .offset:focus {
+  box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+}
+.offset {
+  --color: #19bc8b;
+  --hover: #ff7070;
+}
+.row button {
+  color: var(--color);
+  transition: 0.25s;
+}
+.row button:hover,.row button:focus {
+  border-color: var(--hover);
+  color: #ffffff;
+}
+.row button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+.row  > div > .btn-group .dropdown-menu
+{ background-color: #19bc8b;
+}
+.row > div > .btn-group .dropdown-menu  a{
+color: rgb(255, 255, 255);
+}
+.row > div > .btn-group .dropdown-menu  a:hover{
+  color: #ff7070;
 }
