@@ -1,3 +1,4 @@
+
 $('.navbar-collapse a').click(function(){
     $(".navbar-collapse").collapse('hide');
 });
@@ -26,6 +27,7 @@ $('body').scrollspy({
     offset: 250,
   });
 
+<<<<<<< HEAD
 
 // copy to clipboard
 $('.card-action #btn').tooltip({
@@ -44,3 +46,5 @@ $('.card-action #btn').tooltip({
       $('.card-action #btn').tooltip('hide');
     }, 1000);
   }
+=======
+>>>>>>> c8f3da41026ea8ba1b7be47b023109947ec11364
