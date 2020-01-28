@@ -215,7 +215,7 @@ footer .copyright {
     margin-bottom: 30px;
   }
 }
-@media (max-width: 786px) {
+@media (max-width: 768px) {
   footer {
     margin-bottom: 0px;
 }
@@ -248,7 +248,7 @@ footer .copyright {
 #sidebar.active {
   margin-left: -250px;
 }
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   #sidebar {
       margin-left: -250px;
   }
