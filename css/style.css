@@ -333,6 +333,21 @@ ul ul a {
 #content{
   font-size:medium;
 }
+@media(max-width:768px)
+{
+  #content{
+    font-size: small;
+  }
+}
+#output{
+  font-size:medium;
+}
+@media(max-width:768px)
+{
+  #output{
+    font-size: small;
+  }
+}
 
 /* card body */
 @media(min-width:992px){
