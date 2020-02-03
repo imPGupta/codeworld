@@ -336,7 +336,8 @@ ul ul a {
 @media(max-width:768px)
 {
   #content{
-    font-size: small;
+    font-size:14px;
+    
   }
 }
 #output{
@@ -345,7 +346,7 @@ ul ul a {
 @media(max-width:768px)
 {
   #output{
-    font-size: small;
+    font-size: 14px;
   }
 }
 
