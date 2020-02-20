@@ -15,6 +15,12 @@ $(document).ready(function () {
     
 });
 
+// Modal
+
+$(document).ready(function(){
+  $("#myModal").modal('show');
+});
+
 
 AOS.init({
     offset:120,
