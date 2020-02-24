@@ -378,6 +378,14 @@ ul ul a {
   text-align: center;
   justify-content: center;
 } */
+
+.close:hover, .close:focus {
+  box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
+}
+.close{
+  /* --color: #19bc8b; */
+  --hover: #ff4b4b;
+}
 .pulse:hover, .pulse:focus {
   animation: pulse 1s;
   box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
@@ -417,6 +425,22 @@ ul ul a {
   margin: 0.5em;
   padding: 1em 2em;
 }
+.card-header button {
+  color: #fff;
+  /* transition: 0.25s; */
+}
+.card-header button:hover,button:focus {
+  border-color: var(--hover);
+  color: #ffffff;
+}
+.card-header button {
+  /* background: none; */
+  border: 3px solid #ff4b4b;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
 
 .row  > div > .btn-group .dropdown-menu
 { background-color: #19bc8b;
@@ -426,4 +450,12 @@ color: rgb(255, 255, 255);
 }
 .row > div > .btn-group .dropdown-menu  a:hover{
   color: #ff7070;
+}
+
+/* Message */
+.jumbotron{
+  background-color: rgb(53, 53, 53);
+}
+.jumbotron p{
+  color: rgb(221, 221, 221);
 }
