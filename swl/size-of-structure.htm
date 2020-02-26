@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Loop Optimized Program</title>
+        <title>Size Of Structure</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, intial-scale=1.0, shrink-to-fit=no">
         <meta name="keywords" content="codeworld,code, mmmut codes, html, css, c, data structure, java, c++, learning, programming, development,tutorials,practicals,examples">
@@ -74,16 +74,16 @@
                     <li><a href="../swl-4.html">Introduction</a></li>
                     <li><a href="optimizedbubblesort.htm">Optimized Bubble Sort</a></li>
                     <li><a href="loopunotimized.htm">Loop Unoptimized</a></li>
-                    <li class="active"><a href="loopoptimized.htm">Loop Optimized</a></li>
+                    <li><a href="loopoptimized.htm">Loop Optimized</a></li>
                     <li><a href="fibtailrec.htm">Fibonacci Using Tail Recursion</a></li>
                     <li><a href="facwithoutmacro.htm">Factorial</a></li>
                     <li><a href="facwithmacro.htm">Factorial With Macro</a></li>
-                    <li><a href="size-of-structure.htm">Size Of Structure</a></li>
+                    <li class="active"><a href="size-of-structure.htm">Size Of Structure</a></li>
                     <li><a href="logic-gates-in-c++.htm">Logic Gates</a></li>
                 </ul>
             </nav>
             <div class="container-sm mt-5 pt-4">
-                <h2 class="text-dark mb-4 pl-2">Loop Optimized Program</h2>
+                <h2 class="text-dark mb-4 pl-2">Size Of Structure</h2>
                 <h4 class="text-info p-2">Recommended: Please solve it by yourself, before moving on to the solution.</h4>
                 <div class="card shadow-sm mb-5">
                   <div class="card-body">
@@ -92,53 +92,20 @@
                       </div>
 <pre id="content">
     #include&lt;stdio.h&gt;
+    struct s1{
+    int a;char b;
+    };
+    struct s2{
+    int a;double b;
+    };
+    struct s3{
+    int a;long double b;
+    };
     int main()
     {
-        int a=5,b=2,c=3,i,j,max=100;
-        int row=2,col=2,mat1[2][2],mat2[2][2]={};
-        printf("1.Loop Inversion:\n");
-        i=max;
-            while(i--)
-        printf("Loop inversion ");
-        printf("\n2.Loop Unrolling:\n");
-            for(i=0;i&lt;max;i++)
-        {
-            printf("Loop unrolling ");i++;
-            printf("Loop unrolling ");i++;
-            printf("Loop unrolling ");i++;
-            printf("Loop unrolling ");i++;
-            printf("Loop unrolling ");i++;
-            printf("Loop unrolling ");i++;
-            printf("Loop unrolling ");i++;
-            printf("Loop unrolling ");i++;
-        }
-        printf("\n3.Loop Motion:\n");
-        a=c;
-            for(i=0;i&lt;max;i++)
-            b+=i;
-        printf("a=%d\tb=%d\tc=%d",a,b,c);
-        printf("\n4.Loop Jamming:\n");
-            for(i=0;i&lt;row;i++)
-        {
-            for(j=0;j&lt;col;j++)
-                mat1[i][j]=0;
-            mat2[i][i]=1;
-        }
-        printf("Matrix1:\n");
-        for(i=0;i&lt;row;i++)
-        {
-            for(j=0;j&lt;col;j++)
-            printf("%d ",mat1[i][j]);
-            printf("\n");
-        }  
-        printf("Matrix2:\n");
-        for(i=0;i&lt;row;i++)
-        {
-            for(j=0;j&lt;col;j++)
-            printf("%d ",mat2[i][j]);
-            printf("\n");
-        }      
-        return 0;
+        printf("Size of s1= %d",sizeof(struct s1));
+        printf("\nSize of s2= %d",sizeof(struct s2));
+        printf("\nSize of s3= %d",sizeof(struct s3));
     }
 </pre>
                   </div>
@@ -149,58 +116,13 @@
 <pre id="output">
 
     Sample Output:    
-        1.Loop Inversion:
-        Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop
-        inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop inver
-        sion Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion
-        Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop
-        inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop inver
-        sion Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion
-        Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop
-        inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop inver
-        sion Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion
-        Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop
-        inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop inver
-        sion Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion
-        Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop
-        inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop inver
-        sion Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion
-        Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop
-        inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop inver
-        sion Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion
-        Loop inversion Loop inversion Loop inversion Loop inversion
-        2.Loop Unrolling:
-        Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop
-        unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrol
-        ling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling
-        Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop
-        unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrol
-        ling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling
-        Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop
-        unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrol
-        ling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling
-        Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop
-        unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrol
-        ling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling
-        Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop
-        unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrol
-        ling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling
-        Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop
-        unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrol
-        ling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling
-        Loop unrolling Loop unrolling Loop unrolling Loop unrolling
-        3.Loop Motion:
-        a=3     b=4952  c=3
-        4.Loop Jamming:
-        Matrix1:
-        0 0
-        0 0
-        Matrix2:
-        1 0
-        0 1     
+        Size of s1= 8
+        Size of s2= 16
+        Size of s3= 32
+
 </pre>
                 </div>
-            </div> 
+            </div>            
             <h5 class="text-success mt-5 mb-5">Don't hesitate to message me if you find anything incorrect, or you want to share more information about the topic discussed above.
                 <span class="fa fa-hand-o-down"></span>
             </h5>

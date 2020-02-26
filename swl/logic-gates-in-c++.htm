@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Loop Optimized Program</title>
+        <title>Logic Gates</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, intial-scale=1.0, shrink-to-fit=no">
         <meta name="keywords" content="codeworld,code, mmmut codes, html, css, c, data structure, java, c++, learning, programming, development,tutorials,practicals,examples">
@@ -74,133 +74,175 @@
                     <li><a href="../swl-4.html">Introduction</a></li>
                     <li><a href="optimizedbubblesort.htm">Optimized Bubble Sort</a></li>
                     <li><a href="loopunotimized.htm">Loop Unoptimized</a></li>
-                    <li class="active"><a href="loopoptimized.htm">Loop Optimized</a></li>
+                    <li><a href="loopoptimized.htm">Loop Optimized</a></li>
                     <li><a href="fibtailrec.htm">Fibonacci Using Tail Recursion</a></li>
                     <li><a href="facwithoutmacro.htm">Factorial</a></li>
                     <li><a href="facwithmacro.htm">Factorial With Macro</a></li>
                     <li><a href="size-of-structure.htm">Size Of Structure</a></li>
-                    <li><a href="logic-gates-in-c++.htm">Logic Gates</a></li>
+                    <li class="active"><a href="logic-gates-in-c++.htm">Logic Gates</a></li>
                 </ul>
             </nav>
             <div class="container-sm mt-5 pt-4">
-                <h2 class="text-dark mb-4 pl-2">Loop Optimized Program</h2>
+                <h2 class="text-dark mb-4 pl-2">Operations Of Logic Gates By Using C++</h2>
                 <h4 class="text-info p-2">Recommended: Please solve it by yourself, before moving on to the solution.</h4>
                 <div class="card shadow-sm mb-5">
                   <div class="card-body">
                     <div class="card-action float-right">
                         <button class="btn btn-info" id="btn" data-clipboard-target="#content"><span class="fa fa-copy"></span></button>
                       </div>
-<pre id="content">
-    #include&lt;stdio.h&gt;
+<pre id="content">  
+    #include&lt;iostream&gt;
+    using namespace std;
+    class Not{
+        bool a;
+        public:
+            void setA(bool x)
+            {
+                a=x;
+            }
+            bool getOutput()
+            {
+                return !a;
+            }
+    };
+    class And{
+        bool a,b;
+        public:
+            void setA(bool x)
+            {
+                a=x;
+            }
+            void setB(bool y)
+            {
+                b=y;
+            }
+            bool getOutput()
+            {
+                return a&amp;b;
+            }
+    };
+    class Or{
+        bool a,b;
+        public:
+            void setA(bool x)
+            {
+                a=x;
+            }	
+            void setB(bool y)
+            {
+                b=y;
+            }
+            bool getOutput(){
+                return a|b;
+            }
+    };
+    
+    class NOr{
+        bool a,b;
+        public:
+            void setA(bool x)
+            {
+                a=x;
+            }		
+            void setB(bool y)
+            {
+                b=y;
+            }
+            bool getOutput(){
+                return !(a|b);
+            }
+    };
+    
+    class NAnd{
+        bool a,b;
+        public:
+            void setA(bool x)
+            {
+                a=x;
+            }		
+            void setB(bool y)
+            {
+                b=y;
+            }
+            bool getOutput(){
+                return !(a&b);
+            }
+    };
+    
+    class XOr{
+        bool a,b;
+        public:
+            void setA(bool x)
+            {
+                a=x;
+            }		
+            void setB(bool y)
+            {
+                b=y;
+            }
+            bool getOutput(){
+                return a^b;
+            }
+    };
+    class XNOr{
+        bool a,b;
+        public:
+            void setA(bool x)
+            {
+                a=x;
+            }		
+            void setB(bool y)
+            {
+                b=y;
+            }
+            bool getOutput(){
+                return !(a^b);
+            }
+    };
     int main()
     {
-        int a=5,b=2,c=3,i,j,max=100;
-        int row=2,col=2,mat1[2][2],mat2[2][2]={};
-        printf("1.Loop Inversion:\n");
-        i=max;
-            while(i--)
-        printf("Loop inversion ");
-        printf("\n2.Loop Unrolling:\n");
-            for(i=0;i&lt;max;i++)
-        {
-            printf("Loop unrolling ");i++;
-            printf("Loop unrolling ");i++;
-            printf("Loop unrolling ");i++;
-            printf("Loop unrolling ");i++;
-            printf("Loop unrolling ");i++;
-            printf("Loop unrolling ");i++;
-            printf("Loop unrolling ");i++;
-            printf("Loop unrolling ");i++;
-        }
-        printf("\n3.Loop Motion:\n");
-        a=c;
-            for(i=0;i&lt;max;i++)
-            b+=i;
-        printf("a=%d\tb=%d\tc=%d",a,b,c);
-        printf("\n4.Loop Jamming:\n");
-            for(i=0;i&lt;row;i++)
-        {
-            for(j=0;j&lt;col;j++)
-                mat1[i][j]=0;
-            mat2[i][i]=1;
-        }
-        printf("Matrix1:\n");
-        for(i=0;i&lt;row;i++)
-        {
-            for(j=0;j&lt;col;j++)
-            printf("%d ",mat1[i][j]);
-            printf("\n");
-        }  
-        printf("Matrix2:\n");
-        for(i=0;i&lt;row;i++)
-        {
-            for(j=0;j&lt;col;j++)
-            printf("%d ",mat2[i][j]);
-            printf("\n");
-        }      
-        return 0;
+        Not n;
+        And a;
+        Or o;
+        NOr no;
+        NAnd na;
+        XOr xo;
+        XNOr xno;
+        n.setA(0);
+        a.setA(1);a.setB(0);
+        o.setA(1);o.setB(0);
+        no.setA(1);no.setB(0);
+        na.setA(1);na.setB(0);
+        xo.setA(1);xo.setB(0);
+        xno.setA(1);xno.setB(0);
+        cout&lt;&lt;"Not Value= "&lt;&lt;n.getOutput()&lt;&lt;
+        "\nAnd Value= "&lt;&lt;a.getOutput()&lt;&lt;
+        "\nOr Value= "&lt;&lt;o.getOutput()&lt;&lt;
+        "\nNor Value= "&lt;&lt;no.getOutput()&lt;&lt;
+        "\nNand Value= "&lt;&lt;na.getOutput()&lt;&lt;
+        "\nXor Value= "&lt;&lt;xo.getOutput()&lt;&lt;
+        "\nXNOr Value= "&lt;&lt;xno.getOutput();
     }
 </pre>
-                  </div>
-            </div>
-            <h4 class="text-dark mb-4 pl-2">Input / Output :-</h4>
-            <div class="card shadow-sm">
-                <div class="card-body">
+        </div>
+        </div>
+<h4 class="text-dark mb-4 pl-2">Input / Output :-</h4>
+<div class="card shadow-sm">
+    <div class="card-body">
 <pre id="output">
 
-    Sample Output:    
-        1.Loop Inversion:
-        Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop
-        inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop inver
-        sion Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion
-        Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop
-        inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop inver
-        sion Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion
-        Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop
-        inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop inver
-        sion Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion
-        Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop
-        inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop inver
-        sion Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion
-        Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop
-        inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop inver
-        sion Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion
-        Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop
-        inversion Loop inversion Loop inversion Loop inversion Loop inversion Loop inver
-        sion Loop inversion Loop inversion Loop inversion Loop inversion Loop inversion
-        Loop inversion Loop inversion Loop inversion Loop inversion
-        2.Loop Unrolling:
-        Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop
-        unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrol
-        ling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling
-        Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop
-        unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrol
-        ling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling
-        Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop
-        unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrol
-        ling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling
-        Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop
-        unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrol
-        ling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling
-        Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop
-        unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrol
-        ling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling
-        Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop
-        unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrol
-        ling Loop unrolling Loop unrolling Loop unrolling Loop unrolling Loop unrolling
-        Loop unrolling Loop unrolling Loop unrolling Loop unrolling
-        3.Loop Motion:
-        a=3     b=4952  c=3
-        4.Loop Jamming:
-        Matrix1:
-        0 0
-        0 0
-        Matrix2:
-        1 0
-        0 1     
+Sample Output:    
+    Not Value= 1
+    And Value= 0
+    Or Value= 1
+    Nor Value= 0
+    Nand Value= 1
+    Xor Value= 1
+    XNOr Value= 0
+
 </pre>
-                </div>
-            </div> 
+    </div>
+</div>  
             <h5 class="text-success mt-5 mb-5">Don't hesitate to message me if you find anything incorrect, or you want to share more information about the topic discussed above.
                 <span class="fa fa-hand-o-down"></span>
             </h5>

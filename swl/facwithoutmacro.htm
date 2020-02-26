@@ -73,11 +73,13 @@
                 <ul class="list-unstyled components">
                     <li><a href="../swl-4.html">Introduction</a></li>
                     <li><a href="optimizedbubblesort.htm">Optimized Bubble Sort</a></li>
-                    <li><a href="loopunotimizeed.htm">Loop Unoptimized</a></li>
+                    <li><a href="loopunotimized.htm">Loop Unoptimized</a></li>
                     <li><a href="loopoptimized.htm">Loop Optimized</a></li>
                     <li><a href="fibtailrec.htm">Fibonacci Using Tail Recursion</a></li>
                     <li class="active"><a href="facwithoutmacro.htm">Factorial</a></li>
                     <li><a href="facwithmacro.htm">Factorial With Macro</a></li>
+                    <li><a href="size-of-structure.htm">Size Of Structure</a></li>
+                    <li><a href="logic-gates-in-c++.htm">Logic Gates</a></li>
                 </ul>
             </nav>
             <div class="container-sm mt-5 pt-4">
@@ -93,17 +95,34 @@
     int main()
     {
 
-        long long int i,n=15;
-        printf("Factorial of %lld= ",n);
+        long long int i,n;
+        printf("Enter a number: ");
+        scanf("%lld",&n);
+        printf("Factorial of= ");
         for(i=n-1;i&gt;=2;i--)
         n*=i;
         printf("%lld",n);	
-        return 0;
 
     }
 </pre>
                   </div>
             </div>
+            <h4 class="text-dark mb-4 pl-2">Input / Output :-</h4>
+            <div class="card shadow-sm">
+                <div class="card-body">
+<pre id="output">
+
+    Sample Output 1:    
+        Enter a number: 15
+        Factorial of= 1307674368000
+       
+    Sample Output 2:    
+        Enter a number: 20
+        Factorial of= 2432902008176640000
+        
+</pre>
+                </div>
+            </div>   
             <h5 class="text-success mt-5 mb-5">Don't hesitate to message me if you find anything incorrect, or you want to share more information about the topic discussed above.
                 <span class="fa fa-hand-o-down"></span>
             </h5>
