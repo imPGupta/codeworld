@@ -1,4 +1,20 @@
+// Loader
+$(document).ready(function(){
+  setTimeout(function(){
+    $('body').addClass('loaded');
+  }, 3000);
+});
+document.onreadystatechange = function() { 
+	if (document.readyState !== "complete") { 
+		document.querySelector("body").style.visibility = "hidden"; 
+		document.querySelector("#loader-wrapper").style.visibility = "visible"; 
+	} else { 
+		document.querySelector("#loader-wrapper").style.display = "none"; 
+		document.querySelector("body").style.visibility = "visible"; 
+	} 
+}; 
 
+// Navbar
 $('.navbar-collapse a').click(function(){
     $(".navbar-collapse").collapse('hide');
 });
