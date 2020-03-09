@@ -1,9 +1,9 @@
 // Loader
-// $(document).ready(function(){
-//   setTimeout(function(){
-//     $('body').addClass('loaded');
-//   }, 3000);
-// });
+$(document).ready(function(){
+  setTimeout(function(){
+    $('body').addClass('loaded');
+  }, 2000);
+});
 
 // Navbar
 $('.navbar-collapse a').click(function(){
