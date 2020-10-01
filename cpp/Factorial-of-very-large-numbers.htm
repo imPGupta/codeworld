@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Array in c++</title>
+        <title>Factorial Of Very Large Number</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, intial-scale=1.0, shrink-to-fit=no">
         <meta name="keywords" content="codeworld,code, mmmut codes, html, css, c, data structure, java, c++, learning, programming, development,tutorials,practicals,examples">
@@ -72,12 +72,12 @@
                 <ul class="list-unstyled components">
                     <li><a href="../cpp.html">Introduction</a></li>
                     <li><a href="hellocodeworld.htm">Hello CodeWorld</a></li>
-                    <li class="active"><a href="array.htm">Array Initialization</a></li>
-                    <li><a href="Factorial-of-very-large-numbers.htm">Factorial Of Very Large Number</a></li>
+                    <li><a href="array.htm">Array Initialization</a></li>
+                    <li class="active"><a href="Factorial-of-very-large-numbers.htm">Factorial Of Very Large Number</a></li>
                 </ul>
             </nav>
             <div class="container-sm mt-5 pt-4">
-                <h2 class="text-dark mb-4 pl-2">Initialization Of An Array</h2>
+                <h2 class="text-dark mb-4 pl-2">Factorial Of Very Large Number</h2>
                 <h4 class="text-info p-2">Recommended: Please solve it by yourself, before moving on to the solution.</h4>
                 <div class="card shadow-sm mb-5">
                   <div class="card-body">
@@ -85,15 +85,31 @@
                         <button class="btn btn-info" id="btn" data-clipboard-target="#content"><span class="fa fa-copy"></span></button>
                       </div>
 <pre id="content">
-    #include&lt;iostream&gt;
+    #include&lt;bits/stdc++.h&gt;
     using namespace std;
-    int main()
-    {
-        int i;
-        int arr[6];
-        fill_n(arr,6,9);
-        for(i=0;i&lt;6;i++)
-        cout&lt;&lt;arr[i];
+    
+    // Function to find factorial
+    string Factorial(long long n){
+        if(n==0)
+            return "1";
+            
+        long long i,fact=0;
+        
+        for(i=1;i&lt;=n;i++)
+            fact+=log(i);
+        string str;
+        str=to_string(round(exp(fact)));
+        return str;
+    }
+    
+    int main(){
+        long long n;
+        cout&lt;&lt;"Enter the number: ";
+        cin&gt;&gt;n;
+        string str;
+        str=Factorial(n);
+        cout&lt;&lt;"The factorial of "&lt;&lt;n&lt;&lt;" = "&lt;&lt;str;
+        return 0;
     }
 </pre>
                   </div>
