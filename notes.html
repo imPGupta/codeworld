@@ -8,10 +8,11 @@
         <meta name="description" content="It is an educational website for learning coding online. It includes tutorials, references, practicals related to C, C++, Java, Data Structure etc.">
         <meta name="author" content="Prashant Kumar Gupta">
         <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="css/style.css" type="text/css">
         <link rel="stylesheet" href="css/font-awesome.css" type="text/css">
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">  
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
         <link rel="shortcut icon" href="img/logo.jpg">
         
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -46,6 +47,15 @@
     </head>
     <body>
        
+        <!-- Loader -->
+        <div id="loader-wrapper">
+          <div id="loader"></div>
+      
+          <div class="loader-section section-left"></div>
+          <div class="loader-section section-right"></div>
+      
+        </div>
+
         <!-- Header Section -->
         <nav class="navbar navbar-expand-md navbar-dark rounded">
             <a class="navbar-brand" href="index.html">
@@ -653,6 +663,8 @@
                   You can do request for your program and also contribute your programs for other users, which can be uploaded later with your name.
                   Also, I would like to work in a team, as we will learn faster and much more. Don't hesitate to share your knowledge with others.<br>
                   You can send your notes, programs, papers, etc. on <a href="mailto:prashantkgupta17@gmail.com" target="_blank">2018021084@mmmut.ac.in</a> or by using other contact details on the home page.<br>
+                  You can also contribute to the development of this website. Github Link: <a href="https://github.com/imPGupta/codeworld" target="_blank"><span class="fa fa-github fs-3"></span></a><br>
+
                   Thank you.
                 </p>
               </div>
@@ -665,5 +677,14 @@
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/script.js"></script>
+        <script>
+          $(document).ready(function() {
+          
+              setTimeout(function(){
+                  $('body').addClass('loaded');
+              }, 3000);
+          
+          });
+      </script>
     </body>
 </html>
